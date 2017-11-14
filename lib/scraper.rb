@@ -23,7 +23,7 @@ class Scraper
     doc = Nokogiri::HTML(open(profile_url))
     hash[:profile_quote] = doc.css(".profile-quote").text
     hash[:bio] = doc.css(".bio-content .description-holder p").text
-    doc.css(".social_icon_container a").each do |platform|
+    doc.css(".social-icon-container a").each do |platform|
       if platform.attr("href").value.include?("twitter")
         hash[:twitter] = platform.attr("href").value
       elsif platform.attr("href").value.include?("linkedin")
