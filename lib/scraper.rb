@@ -26,6 +26,9 @@ class Scraper
     blog = doc.css(".social_icon_container").attr("href")
     profile_quote = doc.css(".profile_quote").text
     bio = doc.css(".bio-content content-holder .description-holder").text
+    hash = {:twitter => twitter, :linkedin => linkedin, :github => github, :blog => blog, :profile_quote => profile_quote,
+    :bio => bio}
+    hash
   end
 
 end
