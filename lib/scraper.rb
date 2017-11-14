@@ -24,14 +24,14 @@ class Scraper
     hash[:profile_quote] = doc.css(".profile-quote").text
     hash[:bio] = doc.css(".bio-content .description-holder p").text
     doc.css(".social-icon-container a").each do |platform|
-      if platform.attr("href").value.include?("twitter")
-        hash[:twitter] = platform.attr("href").value
-      elsif platform.attr("href").value.include?("linkedin")
-        hash[:linkedin] = platform.attr("href").value
-      elsif platform.attr("href").value.include?("github")
-        hash[:github] = platform.attr("href").value
-      elsif platform.attr("href").value.include?("blog")
-        hash[:blog] = platform.attr("href").value
+      if platform.attr("href").include?("twitter")
+        hash[:twitter] = platform.attr("href")
+      elsif platform.attr("href").include?("linkedin")
+        hash[:linkedin] = platform.attr("href")
+      elsif platform.attr("href").include?("github")
+        hash[:github] = platform.attr("href")
+      elsif platform.attr("href").include?("blog")
+        hash[:blog] = platform.attr("href")
       end
     end
     hash
