@@ -34,8 +34,6 @@ class Scraper
         hash[:blog] = platform.attr("href")
       end
     end
-
-    
     hash
   end
 
