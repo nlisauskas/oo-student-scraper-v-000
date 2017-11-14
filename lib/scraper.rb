@@ -30,8 +30,7 @@ class Scraper
         hash[:linkedin] = platform.attr("href")
       elsif platform.attr("href").include?("github")
         hash[:github] = platform.attr("href")
-      elsif platform.attr("href").include?("blog")
-        hash[:blog] = platform.attr("href")
+      else hash[:blog] = platform.attr("href")
       end
     end
     hash
