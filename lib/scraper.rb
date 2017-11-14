@@ -25,13 +25,13 @@ class Scraper
     hash[:bio] = doc.css(".bio-content .description-holder p").text
     doc.css(".social_icon_container a").each do |platform|
       if platform.attr("href").value.include?("twitter")
-        hash[:twitter] = platform.attr("href")
+        hash[:twitter] = platform.attr("href").value
       elsif platform.attr("href").value.include?("linkedin")
-        hash[:linkedin] = platform.attr("href")
+        hash[:linkedin] = platform.attr("href").value
       elsif platform.attr("href").value.include?("github")
-        hash[:github] = platform.attr("href")
+        hash[:github] = platform.attr("href").value
       elsif platform.attr("href").value.include?("blog")
-        hash[:blog] = platform.attr("href")
+        hash[:blog] = platform.attr("href").value
       end
     end
     hash
