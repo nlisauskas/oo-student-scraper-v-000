@@ -21,7 +21,11 @@ class Scraper
   def self.scrape_profile_page(profile_url)
     doc = Nokogiri::HTML(open(profile_url))
     twitter = doc.css(".social_icon_container").attr("href")
-    
+    linkedin = doc.css(".social_icon_container").attr("href")
+    github = doc.css(".social_icon_container").attr("href")
+    blog = doc.css(".social_icon_container").attr("href")
+    profile_quote = doc.css(".profile_quote").text
+    bio = doc.css(".bio-content content-holder .description-holder").text
   end
 
 end
